@@ -9,6 +9,8 @@ import { useMutation } from "react-query";
 import Box from "../atoms/Box";
 import { updateCart } from "../../apis/cart";
 
+const staticServerUrl = process.env.REACT_APP_PATH || "";
+
 const CartList = ({ data }) => {
     const route = useNavigate();
     const [cartItems, setCartItems] = useState([]);
@@ -119,7 +121,7 @@ const CartList = ({ data }) => {
                         },
                         onSuccess: (data) => {
                             // navigate to order page
-                            route("/order");
+                            route(staticServerUrl + "/order");
                         }
                     })
 
