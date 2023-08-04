@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Gnb from "../components/organisms/Gnb";
-import MainProductTemplate from "../components/templates/MainProductTemplate";
 import Footer from "../components/organisms/Footer";
 
 const MainLayout = () => {

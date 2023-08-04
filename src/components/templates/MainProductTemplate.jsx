@@ -89,7 +89,7 @@ const MainProductTemplate = () => {
         if(inView && hasNextPage) {
             fetchNextPage();
         }
-    }, [inView]);
+    }, [inView, hasNextPage]);
 
     return (
         <Container>

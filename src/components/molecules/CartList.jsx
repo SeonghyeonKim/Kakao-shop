@@ -14,7 +14,6 @@ const CartList = ({ data }) => {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [updatePayload, setUpdatePayload] = useState([]);
-    const initPayload = useRef([]);
 
     const { mutate } = useMutation({
         mutationFn: updateCart,

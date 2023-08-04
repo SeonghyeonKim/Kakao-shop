@@ -10,7 +10,7 @@ const OrderCompletePage = () => {
     const { id } = useParams();
     
     // 완료된 결제 정보를 불러오기
-    const { data, error, isLoading } = useQuery(`orders/${id}`, () => 
+    const { data, error } = useQuery(`orders/${id}`, () => 
         getOrderFromId(id)
     );
 
