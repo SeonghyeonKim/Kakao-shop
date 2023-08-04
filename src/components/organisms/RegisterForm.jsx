@@ -14,6 +14,8 @@ const EMAIL_MESSAGE = "이메일을 확인해주세요.";
 const PASSWORD_MESSAGE = "비밀번호를 확인해주세요.";
 const PASSWORD_CONFIRM_MESSAGE = "비밀번호가 일치하지 않습니다.";
 
+const staticServerUrl = process.env.REACT_APP_PATH || "";
+
 /**
  * 회원가입 폼 컴포넌트 생성
  * @returns 회원가입 폼 컴포넌트
@@ -61,7 +63,7 @@ const RegisterForm = () => {
                                 username: value.username,
                             })
                             alert("회원가입 되었습니다.")
-                            navigate("/")
+                            navigate(staticServerUrl + "/")
                         }
                     }}
                 >회원가입</Button>

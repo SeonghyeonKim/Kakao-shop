@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import OptionItem from "../atoms/OptionItem";
 import { comma } from "../../utils/convert";
 
+const staticServerUrl = process.env.REACT_APP_PATH || "";
+
 const ProductItems = (products) => products.map((product) => {
     return (
         <div className="p-2 product" key={product.id}>
@@ -42,7 +44,7 @@ const OrderComplateTemplate = ({data}) => {
                     className="w-full p-4 font-bold bg-yellow-300"
                     onClick={() => {                        
                         // 주문 완료 후 메인 페이지로 이동
-                        navigate("/")
+                        navigate(staticServerUrl + "/")
                     }}
                 >쇼핑 계속하기</button>
             </div>

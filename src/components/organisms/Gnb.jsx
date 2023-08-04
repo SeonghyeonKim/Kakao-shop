@@ -37,7 +37,7 @@ const Gnb = () => {
             <div className="px-4 mx-auto max-w-7xl"> 
                 <div className="flex justify-between">
                     <NavLink className="flex items-center py-4" to={staticServerUrl + "/"}>
-                        <img src="/img/logoKakao.png" width="100px" alt="logo"/>
+                        <img src={staticServerUrl + "/img/logoKakao.png"} width="100px" alt="logo"/>
                     </NavLink>
                     <Box className="flex items-center space-x-4">
                         <NavLink to={staticServerUrl + "/cart"}>

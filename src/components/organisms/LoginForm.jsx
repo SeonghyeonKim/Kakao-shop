@@ -12,6 +12,8 @@ const PASSWORD_REGEX = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*
 const EMAIL_MESSAGE = "이메일을 확인해주세요.";
 const PASSWORD_MESSAGE = "비밀번호를 확인해주세요.";
 
+const staticServerUrl = process.env.REACT_APP_PATH || "";
+
 /**
  * 로그인 폼 컴포넌트 생성
  * @returns 로그인 폼 컴포넌트
@@ -50,7 +52,7 @@ const LoginForm = () => {
 								})
 							).then(
 								alert("로그인되었습니다."),
-								window.location.href = "/"
+								window.location.href = staticServerUrl + "/"
 							)
 						)
 					}}
