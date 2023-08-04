@@ -7,7 +7,7 @@ const staticServerUrl = process.env.REACT_APP_PATH || "";
 const ProductCard = ({ product }) => {
     return (
         <Card to={staticServerUrl + `/product/${product.id}`}>
-            <Photo className="card" src={`${staticServerUrl}img/${product.image.slice(1)}`} alt={product.productName} />
+            <Photo className="card" src={staticServerUrl + "/img" + product.image} alt={product.productName} />
             <div className="my-3 text-sm">
                 {product.productName}
             </div>
