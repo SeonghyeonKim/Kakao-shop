@@ -5,6 +5,8 @@ import Button from "../atoms/Button";
 import { useDispatch } from "react-redux";
 import { setEmail } from "../../store/slices/userSlice";
 
+const staticServerUrl = process.env.REACT_APP_PATH || "";
+
 /**
  * GNB 컴포넌트 생성
  * @returns GNB 컴포넌트
@@ -34,15 +36,15 @@ const Gnb = () => {
         <div className="mb-3 border-b">
             <div className="px-4 mx-auto max-w-7xl"> 
                 <div className="flex justify-between">
-                    <NavLink className="flex items-center py-4" to="/">
+                    <NavLink className="flex items-center py-4" to={staticServerUrl + "/"}>
                         <img src="/img/logoKakao.png" width="100px" alt="logo"/>
                     </NavLink>
                     <Box className="flex items-center space-x-4">
-                        <NavLink to="/cart">
+                        <NavLink to={staticServerUrl + "/cart"}>
                             장바구니
                         </NavLink>
                         {isLogin === false &&
-                            <NavLink to="/login"> 
+                            <NavLink to={staticServerUrl + "/login"}> 
                                 로그인
                             </NavLink>
                         }
@@ -52,12 +54,12 @@ const Gnb = () => {
                                 localStorage.removeItem('token');
                                 dispatch(setEmail({email: null}));
                                 alert('로그아웃 되었습니다.');
-                                window.location.href = '/';
+                                window.location.href = staticServerUrl + '/';
                             }}>
                                 로그아웃
                             </Button>
                         }
-                        <NavLink to="/signup">
+                        <NavLink to={staticServerUrl + "/signup"}>
                             회원가입
                         </NavLink>
                     </Box>
